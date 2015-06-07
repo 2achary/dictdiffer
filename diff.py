@@ -1,20 +1,6 @@
 class Diff():
     """
     Show the difference between two given dicts 'old' and 'new'.
-
-    Intended to be used in an auditing system that checks existing
-    records in a nosql database ('old') and compares them with a
-    request to update the record ('new') and store the difference
-    in a separate database.
-
-    See test_diff.py for expected output for each method.
-
-    Will need recursive methods for nested dicts
-
-    Use dot notation for the path to the key that is different e.g. {"a.b.c": "modified value"}
-
-    Must not convert dicts to sets. Because of the billions of records that will be compared,
-    conversion to sets, then back to dicts would drastically slow down the process.
     """
 
     def __init__(self):
