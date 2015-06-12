@@ -8,24 +8,22 @@ class TestDiff(unittest.TestCase):
         self.new_dict = {"dict1":{"dict2": {"x":"C","y":"B"}}}
         self.old_flat = {"a":"a", "z":"z"}
         self.new_flat = {"a":"f", "b":"b"}
-        self.oldsame = {"dict1":{"dict2": {"x":"A","z":"d"}}}
-        self.newsame = {"dict1":{"dict2": {"x":"A","z":"d"}}}
         self.old = {"result":{
                             "first name":"bob",
                             "last name":"segar",
-                            "phone":{"home":"615-555-4433",
+                            "phone":{"home":"615-509-9910",
                                     "mobile":"615-555-4444"},
                             "title":["programmer", "dev-ops"],
-                            "salary":{"starting":80000,
-                                        "20150303":90000}}}
+                            "salary":{"starting":40000,
+                                        "20150303":45000}}}
 
         self.new = {"result":{
                             "first name":"bob",
                             "last name":"segar",
                             "phone":{"mobile":"615-555-4444"},
                             "title":["python developer", "dev-ops"],
-                            "salary":{"starting":80000,
-                                        "20150303":90000},
+                            "salary":{"starting":40000,
+                                        "20150303":45000},
                             "clearance":"level Z"}}
 
         self.d = Diff()
@@ -69,11 +67,5 @@ class TestDiff(unittest.TestCase):
         ]
         self.assertEqual(result, expected)
 
-    def test_no_difference(self):
-        result = self.d.combine_results(self.oldsame, self.newsame)
-        expected = []
-        self.assertEqual(result, expected)
-
 if __name__ == "__main__":
     unittest.main()
-
